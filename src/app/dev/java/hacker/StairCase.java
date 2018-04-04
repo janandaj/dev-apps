@@ -1,4 +1,4 @@
-package app.dev.java;
+package app.dev.java.hacker;
 
 import java.util.Scanner;
 

@@ -22,10 +22,13 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Set;
+import java.util.Stack;
 import java.util.StringJoiner;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -412,5 +415,61 @@ public class StreamTest
 			}
 		}
 	}
+
+	@Test
+	public void testListIndex()
+	{
+		List<String> myList = new ArrayList<>();
+		myList.add( "one" );
+		myList.add( "two" );
+		myList.add( "three" );
+		myList.add( "four" );
+		myList.add( "five" );
+
+		System.out.println( "Inserted in 'order': " );
+		printList( myList );
+
+		// Clear the list
+		myList.clear();
+
+		myList.add( "four" );
+		myList.add( "five" );
+		myList.add( "one" );
+		myList.add( "two" );
+		myList.add( "three" );
+
+		System.out.println( "\n" );
+		System.out.println( "Inserted out of 'order': " );
+		printList( myList );
+	}
+
+	private void printList( List<String> myList )
+	{
+		for ( String string : myList )
+		{
+			System.out.println( string );
+		}
+	}
+
+	@Test
+	public void testQueueAndStack()
+	{
+		Queue<Character> queue = new LinkedList<>();
+		Stack<Character> stack = new Stack<>();
+
+		queue.offer( 'A' );
+		queue.offer( 'B' );
+
+		System.out.println( queue.poll() );
+		System.out.println( queue.poll() );
+
+		stack.push( 'A' );
+		stack.push( 'B' );
+
+		System.out.println( stack.pop() );
+		System.out.println( stack.pop() );
+
+	}
+
 }
 
