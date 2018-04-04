@@ -1,4 +1,4 @@
-package app.dev.jananda;
+package app.dev.java;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by jananda on 04/04/2018.
+ * Created by java on 04/04/2018.
  */
 public class MaximumPerimeterTraingle
 {

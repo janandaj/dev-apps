@@ -1,7 +1,7 @@
-package app.dev.jananda;
+package app.dev.java;
 
 /**
- * Created by jananda on 29/03/2018.
+ * Created by java on 29/03/2018.
  */
 class Calculator
 {

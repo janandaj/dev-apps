@@ -1,4 +1,4 @@
-package app.dev.jananda;
+package app.dev.java;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Created by jananda on 04/04/2018.
+ * Created by java on 04/04/2018.
  */
 public class ArrayListCombination
 {

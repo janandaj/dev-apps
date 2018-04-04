@@ -1,7 +1,7 @@
-package app.dev.jananda;
+package app.dev.java.oop;
 
 /**
- * Created by jananda on 04/04/2018.
+ * Created by java on 04/04/2018.
  */
 class Person
 {
