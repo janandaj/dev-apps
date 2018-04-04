@@ -27,18 +27,45 @@ public class BinaryTree
 		return count;
 	}
 
+	private static void levelOrder( BinaryNode root )
+	{
+		List<Integer> nodeValues = new ArrayList<>();
+		nodeValues.add( root.data );
+
+		int level = addLevels( root );
+		do
+		{
+			List<BinaryNode> node1List = levelMap.get( level );
+			level = addLevels( node1List.toArray( new BinaryNode[node1List.size()] ) );
+
+			for ( BinaryNode bn : node1List )
+			{
+				nodeValues.add( bn.data );
+			}
+		}
+		while ( level != -1 );
+
+		String x = "";
+		for ( int i : nodeValues )
+		{
+			x += i + " ";
+		}
+		System.out.println( x );
+
+	}
+
 	private static int addLevels( BinaryNode... nodes )
 	{
 		List<BinaryNode> levelList = new ArrayList<>();
 		for ( BinaryNode node1 : nodes )
 		{
-			if ( node1.right != null )
-			{
-				levelList.add( node1.right );
-			}
 			if ( node1.left != null )
 			{
 				levelList.add( node1.left );
+			}
+			if ( node1.right != null )
+			{
+				levelList.add( node1.right );
 			}
 		}
 
@@ -89,6 +116,8 @@ public class BinaryTree
 		}
 		int height = getHeight( root );
 		System.out.println( height );
+
+		levelOrder( root );
 	}
 
 }
