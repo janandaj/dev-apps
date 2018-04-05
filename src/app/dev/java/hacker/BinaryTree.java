@@ -81,7 +81,7 @@ public class BinaryTree
 		return count;
 	}
 
-	public static BinaryNode insert( BinaryNode root, int data )
+	private static BinaryNode insert( BinaryNode root, int data )
 	{
 		if ( root == null )
 		{
@@ -119,17 +119,5 @@ public class BinaryTree
 
 		levelOrder( root );
 	}
-
 }
 
-class BinaryNode
-{
-	BinaryNode left, right;
-	int data;
-
-	BinaryNode( int data )
-	{
-		this.data = data;
-		left = right = null;
-	}
-}

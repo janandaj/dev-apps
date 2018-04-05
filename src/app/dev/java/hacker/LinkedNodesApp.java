@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by jananda on 04/04/2018.
  */
-class LinkedNodesApp
+public class LinkedNodesApp
 {
 	private static void display( TailNode head )
 	{
@@ -53,18 +53,6 @@ class LinkedNodesApp
 			end.next = x;
 		}
 		return head;
-	}
-}
-
-class TailNode
-{
-	int data;
-	TailNode next;
-
-	TailNode( int d )
-	{
-		data = d;
-		next = null;
 	}
 }
 
