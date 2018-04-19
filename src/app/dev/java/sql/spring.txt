@@ -1,0 +1,143 @@
+https://www.genuitec.com/spring-frameworkrestcontroller-vs-controller/
+
+package com.example.spring.model;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "Employee")
+public class Employee {
+
+    String name;
+
+    String email;
+
+    public String getName() {
+   	 return name;
+    }
+
+    public void setName(String name) {
+   	 this.name = name;
+    }
+
+    public String getEmail() {
+   	 return email;
+    }
+
+    public void setEmail(String email) {
+   	 this.email = email;
+    }
+
+    public Employee() {
+    }
+
+}
+
+package com.example.spring.rest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.example.spring.model.Employee;
+
+@Controller
+@RequestMapping("employees")
+public class EmployeeController {
+
+    Employee employee = new Employee();
+
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody Employee getEmployeeInJSON(@PathVariable String name) {
+
+   	 employee.setName(name);
+   	 employee.setEmail("employee1@genuitec.com");
+
+   	 return employee;
+
+    }
+
+    @RequestMapping(value = "/{name}.xml", method = RequestMethod.GET, produces = "application/xml")
+    public @ResponseBody Employee getEmployeeInXML(@PathVariable String name) {
+
+   	 employee.setName(name);
+   	 employee.setEmail("employee1@genuitec.com");
+
+   	 return employee;
+
+    }
+
+}
+
+Add the <context:component-scan> and <mvc:annotation-driven /> tags to the Spring configuration file.
+• <context:component-scan> activates the annotations and scans the packages to find and register beans within the application context.
+• <mvc:annotation-driven/> adds support for reading and writing JSON/XML if the Jackson/JAXB libraries are on the classpath.
+• For JSON format, include the jackson-databind jar and for XML include the jaxb-api-osgi jar to the project classpath.
+
+JSON—Use the URL: http://localhost:8080/SpringRestControllerExample/rest/employees/Bob and the following output displays:
+
+XML—Use the URL: http://localhost:8080/SpringRestControllerExample/rest/employees/Bob.xml and the following output displays:
+
+package com.example.spring.rest;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.spring.model.Employee;
+
+@RestController
+@RequestMapping("employees")
+public class EmployeeController {
+
+    Employee employee = new Employee();
+
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = "application/json")
+    public Employee getEmployeeInJSON(@PathVariable String name) {
+
+   	 employee.setName(name);
+   	 employee.setEmail("employee1@genuitec.com");
+
+   	 return employee;
+
+    }
+
+    @RequestMapping(value = "/{name}.xml", method = RequestMethod.GET, produces = "application/xml")
+    public Employee getEmployeeInXML(@PathVariable String name) {
+
+   	 employee.setName(name);
+   	 employee.setEmail("employee1@genuitec.com");
+
+   	 return employee;
+
+    }
+
+}
+
+
+Run the same code 6 times with a different
+VM argument (-XX:+UseSerialGC, -XX:+UseParallelGC, -XX:+UseConcMarkSweepGC, -XX:ParallelCMSThreads=2, -XX:ParallelCMSThreads=4, -XX:+UseG1GC).
+
+Each run takes about 55 minutes.
+
+Other VM arguments: -Xmx2048M -server
+OpenJDK version: 1.8.0_51 (currently the latest version)
+Software: Linux version 4.0.4-301.fc22.x86_64
+Hardware: Intel® Core™ i7-4790 CPU @ 3.60GHz
+
+Each run solves 13 planning problems with OptaPlanner. Each planning problem runs for 5 minutes. It starts with a 30 second JVM warm up which is discarded.
+
+Solving a planning problem involves no IO (except a few milliseconds during startup to load the input). A single CPU is completely saturated. It constantly creates many short lived objects, and the GC collects them afterwards.
+
+The benchmarks measure the number of scores that can be calculated per millisecond. Higher is better. Calculating a score for a proposed planning solution is non-trivial: it involves many calculations, including checking for conflicts between every entity and every other entity.
+
+it's not a news that ordinary Parallel GC has better throughput, and CMS (or G1) better latency. That's your blog post in short ))
+
+
+Many of java server-side applications interested more in low latency than pure throughput. And UseParallelGC usually not the best with latency. Without latency data these tables are not really useful.
+
+The general idea of CMS GC is using extra threads (=extra CPU cores) to avoid/reduce full GC occurrences. Usully this provides lower latency. Not a good option for your task (test is CPU bound, throughput focused).
+
+G1 targets to solve problem of big GC pauses with huge heap and provide lower latency than older ParallelGC. Not the best option for your task too (heap is not huge, test is throughput focused).
