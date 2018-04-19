@@ -1,0 +1,185 @@
+http://ddante.asuscomm.com/Apps/Windows/
+http://dl.tehmovies.com/94/3/
+http://dl.tehmovies.com/94/95/8/
+http://dl.tehmovies.com/94/96/2/
+http://dl.nfilm.org/DL/film/1394/khareji/4/
+http://dl1.mysticland.org/Movie/A/
+http://dl.fardadownload.ir/Film/2015/
+http://dlirhd.in/Film2/2014/
+http://dl6.nightsdl.com/admin1/Film/2015/
+http://static.153.8.9.5.clients.your-server.de/movie/2015/september/
+http://www.dominickpham.com/Movies/
+http://downloadrooz.org/?s=ninja
+http://download1080p.com
+http://cdnp.atadownload.com/9402N/
+http://dl.hastidownload.com/2/
+http://dl.hexdownload.net/up/Movie/Foreign/1395/10/
+http://dl.my-film.org/reza/film/?C=M&O=D
+http://dl2.my98music.com/Data/Serial/Arrow/S05/
+http://dl2.my98music.com/Data/Serial/Blindspot/Season%201/
+http://dl2.my98music.com/Data/Serial/Agents%20of%20S.H.I.E.L.D/S04/
+http://dl.funsaber.net/serial/The%20Flash/season%2003/
+http://dl.sv-mov.in/series/arrow/
+https://www2.thewatchseries.cc/black-sails-season-4-episode-8
+https://www2.thewatchseries.cc/the-flash-season-3-episode-18
+http://movie.downloadgozar.ir/film/96/1/John%20Wick%202/
+
+http://dl.tehmovies.com/94/series/prison.break/s5/
+http://dl.hexdownload.net/up/Movie/Series/Prison.Break/s05/720p/
+http://dl.hexdownload.net/up/Movie/Foreign/1396/03/
+http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/
+http://dl.bi-seda.ir/Films/
+http://dl2.downloado.site/dl2/Movie/
+
+http://www.mkvtvseries.com/movie/306-game-of-thrones-s07e01
+http://www.mkvtvseries.com/tv-series/6-game-of-thrones-s07e03#downloads
+http://dl.par30dl.com/Serial/Game.of.Thrones/S07/
+http://dl.funsaber.net/movie/96/3/
+http://dl.funsaber.net/serial/Game%20of%20Thrones/season%207/
+http://fs.evonetbd.com/index.php?dir=Movies/English%20Movies/2017/
+
+http://dl2.downloado.site/dl2/Movie/
+
+http://www.dl.mojoo.ir/upload/film/movies/2017/
+http://dl.upload8.in/files/Film/2017/
+http://dl.upload8.in/files/Film/2018/
+
+
+
+http://123movies.is/movie/filter/series
+http://stream-tv2.to/
+http://series-cravings.me/
+
+Maze Runner 2018
+Black Panther
+
+index of <movie name>
+
+http://media.bia4music.com/movie/2017/Film/10/War%20For%20Planet%20Of%20The%20Apes%202017.720p.Farsi.mkv
+http://dl.my-film.in/s1/Movie/
+
+http://dl.upload8.in/files/Film/2017/Wind%20River%202017/Wind.River.2017.720p.BRrip.MkvCage.FardaDL.mkv
+http://dl.upload8.in/files/Film/2017/Atomic%20Blonde%202017/Atomic.Blonde.2017.720p.BRRip.MkvCage.FardaDL.mkv
+http://dl.upload8.in/files/Film/2017/Wolf%20Warriors%20II%202017/Wolf.Warriors.2.2017.720p.BRRip.MkvCage.FardaDL.mkv
+http://dl.upload8.in/files/Film/2017/Bright%202017/Bright.2017.720p.WEBRip.MkvCage.FardaDL.mkv
+http://dl.upload8.in/files/Film/2017/Beyond%20Skyline%202017/Beyond.Skyline.2017.720p.BRrip.PaHe.FardaDL.mkv
+http://dl.upload8.in/files/Film/2017/First%20Kill%202017/First.Kill.2017.720p.MkvCage.FardaDownload.mkv
+http://dl.upload8.in/files/Film/2017/Revolt%202017/Revolt.2017.720p.BRRip.MkvCage.FardaDL.mkv
+http://dl.upload8.in/files/Film/2018/Death%20Race%204%20Beyond%20Anarchy%202018/Death.Race.4.Beyond.Anarchy.2018.720p.HDRip.MkvCage.FardaDL.mkv
+
+http://www.webproxy.net/
+http://www.yify-torrent.org/
+http://www.baiscopelk.com/movie-collection/
+http://streamtvlinks.me/
+http://stream-tv1.net/
+
+http://123movies.is/movie/filter/series
+http://stream-tv2.to/
+http://series-cravings.me/
+
+
+User ID :A034000130 (www.etfb.lk)
+CG_TBX = BEL#cg174
+CG-Guest = ET#Lp8G@k97P
+
+PHONE 70583521 72071302
+
+https://panel.preyproject.com/login
+PW-IS-MBD
+https://id.avast.com/en-us/login?target=https%3A%2F%2Fmy.avast.com%2F
+LG-US-FB
+https://www.google.com/android/devicemanager
+GM
+https://www.lookout.com/user/login MBD
+https://wmdcommander.appspot.com/user_devices
+
+http://www.google.com/transliterate/Sinhalese
+
+http://stream-tv.me/watch-person-of-interest-online/
+
+tail -100f /usr/local/tbx/glassfish/domains/tbx/logs/server.log
+
+tail -100f /usr/local/tbx/glassfish/domains/tbx/logs/server.log | grep SEARCHINFO
+
+
+C0degen456
+
+
+
+When you received this email please gather the following stats from the server
+ 
+Place the necessary stats in the following location
+    /home/tbx/CG_STATS
+ 
+	1. jstack == to get thread dump
+		/usr/local/java/jdk1.6.0_16/bin/jstack <PROCESS_ID> > jstack_hostname_date.log
+		jstack -F 27250 >> Kernelthread.out 2>&1
+ 
+	2. jmap == to get heap dump
+	                /usr/local/java/jdk1.6.0_16/bin/jmap –histo <PROCESS_ID >  > jmap_hostname_date.log
+	jmap -F -dump:format=b,file=Kernelheap.hprof 27250
+ 
+                         
+	3. screen shot of htop
+  
+	4. screen shot of TP_AUDIT.log
+ 
+             tail -100f /usr/local/tbx/glassfish/domains/tbx/logs/TPAUDIT.log
+
+
+
+Please adhere to the following steps
+ 
+	cd /usr/local/tbx/glassfish/domains/tbx/logs/
+ 
+             tar –cvzf server.log_hostname_date.tgz server.log
+ 
+ Stop Command
+             asadmin stop-domain tbx
+ 
+ Start Command
+             asadmin start-domain tbx
+
+
+http://www.virginholidays.co.uk/
+
+http://www.travelcitydirect.com/
+
+ps aux | less
+ps -p PID -L -o time,pid,tid,pcpu
+jmap -F -heap:live,format=b,file=abc.bin PID
+jmap -F -dump:live,format=b,file=heap.bin 29008
+jmap -F -dump:format=b pid
+jmap -histo:live 29008
+jhat -J-mx132240m -stack false memdump_STG_20120514_aftr-test.bin
+ vncserver :10
+jmap -permstat <PID> > permstat.log
+
+jmap create a heap dump
+jhat visualize created heap dump
+
+
+JAVA_OPTS="$JAVA_OPTS -agentpath:/usr/local/tbx/mtg611/yourkit/yjp-2015-build-15056/bin/linux-x86-64/libyjpagent.so=port=6025"
+CATALINA_PID=$CATALINA_HOME/conf/pid.out
+touch $CATALINA_PID
+chmod 755 $CATALINA_PID
+
+https://www.yourkit.com/java/profiler/features/
+
+
+
+#JMX CONFIGS
+JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote"
+JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.port=5555"
+JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
+JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.ssl=false"
+JAVA_OPTS="$JAVA_OPTS -Djava.rmi.server.hostname=192.168.1.142"
+
+https://docs.oracle.com/javase/8/docs/technotes/guides/visualvm/applications_remote.html
+
+
+
+
+
+
+

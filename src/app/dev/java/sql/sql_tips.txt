@@ -1,0 +1,545 @@
+ALTER SYSTEM KILL SESSION 'SESSION_ID,SERIAL' IMMEDIATE;
+/
+
+alter table CALC_SCHEME  RENAME COLUMN SCHEME_TYPE2 to SCHEME_TYPE
+/
+
+ALTER TABLE WS_HOLIDAY_LOCATION ADD (MAIN_LOC CHAR(1)  DEFAULT 1 NOT NULL)
+/
+
+INSERT INTO WS_CF_PARAM( CODE, BRAND, MULTIPLIER, MULTIPLIER_LOWER, MULTIPLIER_UPPER )
+SELECT CFPC_CODE, WB_CODE, '10', '0', '100' FROM
+(
+  SELECT CFPC.CODE AS CFPC_CODE, WB.CODE AS WB_CODE
+  FROM WS_CF_PARAM_CODES CFPC, WS_BRAND WB
+)
+/
+
+select v1.* from (
+select  max(length(code)) as maxcode from tpl_variation  )temp,
+tpl_variation v1 where length(v1.code) = temp.maxcode
+/
+
+create index supplier_name_aidx  on supplier(upper(name)) compute statistics online
+/
+
+create index sup_pay_invid_aidx on act_supp_payment(invoice_id) compute statistics online
+/
+create index sup_invitem_invid_aidx on act_supp_invoice_item(invoice_id) compute statistics online
+/
+commit
+/
+
+select * from user_tab_columns
+/
+select * from user_tables
+/
+
+
+alter trigger AUD_CALC_RULE_PRIORITY disable;
+alter trigger AUD_CALC_RULE_PRIORITY enable;
+
+select * from user_objects;
+
+ALTER TABLE CLI_TRADE_CLIENT DROP CONSTRAINT "PAYMENT_METHOD_CONSTRAINT"
+/
+ALTER TABLE CLI_TRADE_CLIENT ADD CONSTRAINT "PAYMENT_METHOD_CONSTRAINT" FOREIGN KEY ("PAYMENT_METHOD") REFERENCES "ACT_TRANSACTION_TYPE" ("CODE")
+/
+
+ALTER TABLE TPL_VARIATION DROP UNIQUE (CODE)
+/
+ALTER TABLE TPL_VARIATION ADD CONSTRAINT VAR_CODE_UNIQUE UNIQUE (CODE)
+/
+
+ALTER TABLE TPL_HOTEL_VARIATION ADD (H2H_ID NUMBER(5,0) DEFAULT -1)
+/
+ALTER TABLE TPL_HOTEL_VARIATION_BACKUP ADD (H2H_ID NUMBER(5,0) DEFAULT -1)
+/
+
+select * from USER_CONSTRAINTS
+where CONSTRAINT_NAME = 'H2H_SYSTEM_LANG2LOCALE'
+/
+
+begin REMOVE_ALL_HOLIDAYS(); end;
+/
+
+ALTER TABLE WS_HOLIDAY_COMP_TYPE MODIFY ( FROM_DATE NULL)
+/
+
+ALTER TABLE CALC_SEARCH_SCHEME DROP COLUMN PREFERRED_H2HS
+/
+ALTER TABLE CALC_SEARCH_SCHEME MODIFY (PRODUCT_TYPE NULL)
+/
+
+alter table tpl_variation modify ( CODE VARCHAR2(200) )
+/
+ALTER TABLE TPL_VARIATION MODIFY (CODE VARCHAR2(250 BYTE) )
+/
+
+delete from H2H_SYSTEM_LANGUAGE;
+delete from H2H_SYSTEM where product_code = 'HTL';
+
+Insert into H2H_SYSTEM (ID,PRODUCT_CODE,H2H_NAME,CLASS_NAME,ENABLE,DEFAULT_URL,ADMINDEFAULT,CNX_ENABLE,AMD_ENABLE,WS_ENABLE,SYSTEM_DEFINED) values ((select max(ID) + 1 from H2H_SYSTEM),'HTL','Calypso','it.codegen.tbx.accommodationgateway.calypso.CalypsoController','1',null,'1','1','1','0','0');
+Insert into H2H_SYSTEM (ID,PRODUCT_CODE,H2H_NAME,CLASS_NAME,ENABLE,DEFAULT_URL,ADMINDEFAULT,CNX_ENABLE,AMD_ENABLE,WS_ENABLE,SYSTEM_DEFINED) values ((select max(ID) + 1 from H2H_SYSTEM),'HTL','Tourico','it.codegen.tbx.accommodationgateway.tourico.TouricoController','1',null,'1','1','1','0','0');
+Insert into H2H_SYSTEM (ID,PRODUCT_CODE,H2H_NAME,CLASS_NAME,ENABLE,DEFAULT_URL,ADMINDEFAULT,CNX_ENABLE,AMD_ENABLE,WS_ENABLE,SYSTEM_DEFINED) values ((select max(ID) + 1 from H2H_SYSTEM),'HTL','HotelBeds','it.codegen.tbx.accommodationgateway.hotelbedsv2.HotelBedsController','1','http://212.170.239.71/appservices/http/FrontendService','1','1','1','0','0');
+Insert into H2H_SYSTEM (ID,PRODUCT_CODE,H2H_NAME,CLASS_NAME,ENABLE,DEFAULT_URL,ADMINDEFAULT,CNX_ENABLE,AMD_ENABLE,WS_ENABLE,SYSTEM_DEFINED) values ((select max(ID) + 1 from H2H_SYSTEM),'HTL','SunHotels','it.codegen.tbx.accommodationgateway.sunhotels.SunHotelsController','1',null,'1','1','0','0','0');
+Insert into H2H_SYSTEM (ID,PRODUCT_CODE,H2H_NAME,CLASS_NAME,ENABLE,DEFAULT_URL,ADMINDEFAULT,CNX_ENABLE,AMD_ENABLE,WS_ENABLE,SYSTEM_DEFINED) values ((select max(ID) + 1 from H2H_SYSTEM),'HTL','Novasol','it.codegen.tbx.accommodationgateway.novasol.NovasolController','0',null,'0','1','0','0','0');
+
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values ((select ID from H2H_SYSTEM where h2h_name = 'SunHotels'),'en','en');
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values ((select ID from H2H_SYSTEM where h2h_name = 'Tourico'),'en','en_US');
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values ((select ID from H2H_SYSTEM where h2h_name = 'HotelBeds'),'en','ENG');
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values ((select ID from H2H_SYSTEM where h2h_name = 'Novasol'),'en','826');
+
+
+update h2H_system set id = 3 where H2H_NAME = 'Calypso';
+update h2H_system set id = 4 where H2H_NAME = 'Tourico';
+update h2H_system set id = 5 where H2H_NAME = 'HotelBeds';
+update h2H_system set id = 6 where H2H_NAME = 'SunHotels';
+update h2H_system set id = 9 where H2H_NAME = 'Novasol';
+
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values (6,'en','en');
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values (4,'en','en_US');
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values (5,'en','ENG');
+Insert into H2H_SYSTEM_LANGUAGE (H2H_ID,TBX_LANG_CODE,H2H_LANG_CODE) values (9,'en','826');
+
+
+declare
+
+	begin
+
+	for r in ( select booking_id,pnr,crs,fare_created_office_id from res_flight_booking where original_pnr is not null) loop
+
+		update TKM_PAKG_BOOKINGS set crs = r.crs,pnr = r.pnr, booked_pseudo_city = 'LONVH3100'  where booking_id = r.booking_id;
+
+		update TKM_COMP_BOOKINGS set crs = r.crs,pnr = r.pnr, booked_pseudo_city = 'LONVH3100'  where booking_id = r.booking_id;
+
+	end loop;
+
+end;
+
+/
+
+
+select whc.composition_id, power(sum(whd.yb), 0)*power(sum(whd.yb)/count(*),1-0) as aggr_yb
+		from ws_holiday_composition whc, ws_holiday_date whd
+	where whc.composition_id = whd.composition_id and whc.htl_h2h_id = -1 group by whc.composition_id
+/
+select count(*) from ws_holiday_composition where htl_h2h_id > -1
+/
+insert into ws_htl_h2h_week(composition_id,year_no,month_no,week_no,available_probability,yb,y,b,ltbr,max_yb_date)
+		select whc.composition_id, year_no, month_no, week_no, 100 as available_probability, 0 as yb, 100 as y, 1 as b, 1 as ltbr, max_yb_date from
+		(
+		  select max(avail_date) as max_yb_date, to_char(avail_date,'YYYY') as year_no, to_char(avail_date,'MM') as month_no, to_char(avail_date,'IW') as week_no
+		  from
+		  (
+		    select (level + trunc( sysdate ) ) avail_date from dual
+		    connect by
+		    level <= trunc( add_months(sysdate,23) ) - trunc( sysdate )
+		  ) group by to_char(avail_date,'YYYY'), to_char(avail_date,'MM'), to_char(avail_date,'IW')
+		) temp, ws_holiday_composition whc where whc.htl_h2h_id > -1
+/
+
+update act_client_cc_receipt set card_no = '0', name_of_card = '0'
+where  (card_no != '0' or name_of_card != '0' )
+and booking_id in
+(
+    select rb.booking_id
+    from res_booking rb
+    where (select max(rbi.to_date) from res_booking_item rbi where rbi.booking_id = rb.booking_id ) < add_months(sysdate,-2)
+)
+/
+commit
+/
+
+
+SELECT *
+FROM res_trs_exc_booking_item
+WHERE pickup_point_type = 'D'
+AND not regexp_like (pickup_point_code, '^[0-9]{4}$');
+/
+
+SELECT *
+FROM res_trs_exc_booking_item
+WHERE pickup_point_type = 'D'
+AND not regexp_like (pickup_point_code, '^[0-9]*$');
+/
+
+update h2h_info set h2h_supp_code = replace(h2h_supp_code, 'HB')
+where h2h_supp_code like 'HB%'
+/
+
+
+ALTER TABLE CALC_SEARCH_PROFILE DROP CONSTRAINT CALC_SEARCH_PROFILE_H_FK1
+/
+
+ALTER TABLE CALC_SEARCH_PROFILE ADD CONSTRAINT CALC_SEARCH_PROFILE_H_FK1 FOREIGN KEY ("PROFILE_ID") REFERENCES "H2H_PROFILE" ("PROFILE_ID") ON DELETE SET NULL ENABLE
+/
+
+
+ select * from tpl_variation_holiday_type
+ where (template_id,product,item_no,variation_no,index_no) =
+ ( select template_id,product,item_no,variation_no,index_no from
+ (
+ select
+    tv.template_id,
+    tv.product,
+    tv.item_no,
+    tv.variation_no,
+    tahs.index_no,
+    tahs.holiday_type_bitsum,
+    tahs.from_date,
+    tahs.to_date
+    from
+    tpl_hotel_variation thv
+    inner join tpl_variation tv        on thv.template_id  = tv.template_id
+                                      and thv.product      = tv.product
+                                      and thv.item_no      = tv.item_no
+                                      and thv.variation_no = tv.variation_no
+
+    inner join tpl_accom_holtype_season tahs
+                                       on tahs.template_id = thv.template_id
+                                      and tahs.product     = thv.product
+                                      and tahs.item_no     = thv.item_no
+                                      and tahs.accom_code  = thv.accom_code
+                                      and tahs.node_id     = tv.node_id
+    where
+        not exists
+        ( select 1
+          from tpl_variation_holiday_type tvht
+          where tvht.template_id = tv.template_id
+            and tvht.product     = tv.product
+            and tvht.item_no     = tv.item_no
+            and tvht.variation_no  = tv.variation_no
+        )
+    and tahs.fixed_price = '0'
+    ) temp )
+
+/
+
+
+SELECT PROFILE_ID, PROPERTY,
+CASE WHEN PROPERTY = 'SUPPLIER_CODE' THEN NVL((SELECT TO_CHAR(SUPPLIER_ID) FROM SUPPLIER WHERE CODE = VALUE),'-1') ELSE VALUE END AS VALUE
+FROM H2H_PROFILE_PROPERTY WHERE PROFILE_ID = 4
+
+
+
+DROP MATERIALIZED VIEW LOG ON RES_BOOKING_ITEM;
+
+CREATE MATERIALIZED VIEW LOG ON RES_BOOKING_ITEM
+WITH PRIMARY KEY,
+ROWID ( "BOOKED_DATE", "BOOKED_USER", "BRAND", "COST", "CURRENCY_IN_CONTRACT", "FROM_DATE", "PRICE", "SUPPLIER_ID" ) INCLUDING NEW VALUES;
+
+
+INSERT INTO CLI_COMMISSION_TYPE(COMM_GROUP_ID,COMMISSION_NO,COMMISSION_TYPE,COMMISSIONABLE,OVERRIDE,COMMISSION)
+select COMM_GROUP_ID,COMMISSION_NO,'ITEM_SUP' AS COMMISSION_TYPE,'1' AS COMMISSIONABLE,0 AS OVERRIDE,0 AS COMMISSION from
+(
+  select COMM_GROUP_ID,COMMISSION_NO from CLI_COMMISSION where (COMM_GROUP_ID,COMMISSION_NO) not in  (select COMM_GROUP_ID,COMMISSION_NO from CLI_COMMISSION_TYPE)
+)
+/
+commit
+/
+
+select conf.*, PARAM.PARAMETER from WS_DIVERSITY_CONFIG conf, WS_DIVERSITY_PARAM param
+where bitand(CONF.PARAM_BITSUM,PARAM.BIT_VALUE) > 0 order by CONF.PARAM_BITSUM
+/
+select * from  WS_DIVERSITY_PARAM
+/
+select * from  WS_DIVERSITY_CONFIG
+/
+select * from WS_PRODUCT_SET_DIMENSIONALITY
+/
+select temp.*,CONF2.DIMENSIONALITY_ID,
+(select description from WS_PRODUCT_SET_DIMENSIONALITY where DIMENSIONALITY_ID = CONF2.DIMENSIONALITY_ID ) as description
+from WS_DIVERSITY_CONFIG conf2,
+(with data
+as
+(
+  select param_bitsum,
+         PARAMETER,
+        row_number() over (partition by param_bitsum order by PARAMETER) rn,
+         count(*) over (partition by param_bitsum) cnt
+    from (select conf.param_bitsum, PARAM.PARAMETER from WS_DIVERSITY_CONFIG conf, WS_DIVERSITY_PARAM param
+          where bitand(CONF.PARAM_BITSUM,PARAM.BIT_VALUE) > 0 order by CONF.PARAM_BITSUM)
+  )
+  select param_bitsum, ltrim(sys_connect_by_path(PARAMETER,', '),',') search_params
+    from data
+   where rn = cnt
+   start with rn = 1
+  connect by prior param_bitsum = param_bitsum and prior rn = rn-1
+   order by param_bitsum
+)temp where conf2.param_bitsum = temp.param_bitsum
+order by CONF
+/
+
+select inst_id,username,machine,client_identifier,client_info from gv$session
+where username not in ('SYS','SYSTEM')
+and client_info is not null
+and client_info <> 'closed'
+order by 1,2,3
+
+
+SELECT /*+ USE_NL(res_booking res_booking_package res_booking_item) */
+acc_reserved_allocs.for_date,
+
+/
+
+
+ALTER TABLE cruise_h2h_ship ADD CONSTRAINT cru_ship_2_h2h_ship
+    FOREIGN KEY (supplier_id, ship_no) REFERENCES cruise_ship(supplier_id, ship_no)
+    INITIALLY DEFERRED DEFERRABLE
+/
+
+select v1.* from (
+select  max(length(code)) as maxcode from tpl_variation  )temp,
+tpl_variation v1 where length(v1.code) = temp.maxcode
+/
+
+select itinerary_code, count(*) from (
+     select ship_code, itinerary_code, count(*) from cru_h2h_itinerary group by ship_code, itinerary_code
+     ) group by itinerary_code having count(*) > 1
+
+/
+select table_name, num_rows from user_tables order by num_rows desc
+/
+select distinct (replace(promo_qualifier,' ',','))promo_qualifiers from cru_h2h_cache_rccl_price
+where promo_qualifier is not null
+and length(trim(promo_qualifier)) is not null
+/
+
+with temp as
+    (
+       select distinct currency, (replace(promo_qualifier,' ',','))promo_qualifier from cru_h2h_cache_rccl_price
+       where promo_qualifier is not null
+       and length(trim(promo_qualifier)) is not null and result_index = 100245 and currency = 'GBP'
+     )
+select distinct currency,  trim(regexp_substr(promo_qualifier, '[^,]+', 1, level)) promo_qualifier
+  from (select currency, promo_qualifier from temp) t
+connect by instr(promo_qualifier, ',', 1, level - 1) > 0
+order by currency
+/
+
+
+CREATE BITMAP INDEX "ACC_ALLOCX_BMIDX" ON "ACC_ALLOCATION_EXTRA"("CONTRACT_GROUP_ID","FOR_DATE")
+/
+
+
+
+select sup.supplier_id, sup.code, sup.name, temp1.airports, temp1.airport_names, temp2.cities, temp2.city_names
+from accommodation acc
+inner join supplier sup on ACC.SUPPLIER_ID = SUP.SUPPLIER_ID
+left outer join (
+with data
+as
+(
+  select supplier_id,
+         airport.code,
+         airport.name,
+        row_number() over (partition by supplier_id order by airport.code) rn,
+         count(*) over (partition by supplier_id) cnt
+    from SUPPLIER_NEAREST_AIRPORT inner join airport on SUPPLIER_NEAREST_AIRPORT.code = airport.code
+  )
+  select supplier_id, ltrim(sys_connect_by_path(code,','),',') airports, ltrim(sys_connect_by_path(name,','),',') airport_names
+    from data
+   where rn = cnt
+   start with rn = 1
+  connect by prior supplier_id = supplier_id and prior rn = rn-1
+   order by supplier_id
+   )temp1 on acc.supplier_id = temp1.supplier_id
+left outer join
+(
+with data
+as
+(
+  select supplier_id,
+         city.code,
+         city.name,
+        row_number() over (partition by supplier_id order by city.code) rn,
+         count(*) over (partition by supplier_id) cnt
+    from SUPPLIER_NEAREST_CITY inner join city on SUPPLIER_NEAREST_CITY.code = city.code
+  )
+  select supplier_id, ltrim(sys_connect_by_path(code,','),',') cities, ltrim(sys_connect_by_path(name,','),',') city_names
+    from data
+   where rn = cnt
+   start with rn = 1
+  connect by prior supplier_id = supplier_id and prior rn = rn-1
+   order by supplier_id
+) temp2 on acc.supplier_id = temp2.supplier_id
+/
+
+
+select code ,
+substr( code, instr(code,'.',1,2)+1 )temp,
+case when instr(code,'.',1,3) = 0
+     then substr( code, instr(code,'.',1,2)+1 )
+     else substr( substr( code, instr(code,'.',1,2)+1 ), 0, instr(substr( code, instr(code,'.',1,2)+1 ),'.')-1 ) end as yyy
+from sys_configurations where code like 'jcs.region.%'
+/
+select code, value, case when temp2 = 0 then temp1 else substr( temp1, 0, instr(temp1,'.') -1 ) end as temp
+from( select code , value, substr( code, instr(code,'.',1,2)+1 )temp1, instr(code,'.',1,3)temp2 from sys_configurations where code like 'jcs.region.%' )
+
+/
+
+
+ALTER SYSTEM KILL SESSION 'SESSION_ID,SERIAL' IMMEDIATE;
+/
+SELECT B.OBJECT_NAME, A.OS_USER_NAME, A.LOCKED_MODE, A.SESSION_ID, S.SERIAL#
+FROM V$LOCKED_OBJECT A, DBA_OBJECTS B, V$SESSION S
+WHERE A.OBJECT_ID = B.OBJECT_ID AND A.SESSION_ID =S.SID
+AND A.ORACLE_USERNAME = 'TBX' AND OBJECT_NAME IN ('TABLE')
+/
+select sid, serial# from V$SESSION
+/
+
+select * from
+(
+    select rbi.booking_id, rbi.product_code, rbi.item_no, (adult+child+infant)pax, count(rpi.booking_id)cnt
+    from res_booking_item rbi,
+    (select * from res_pax_item where product_code = 'GEN' and booking_id > 3192991 )rpi
+    where rbi.booking_id > 3192991
+    and rbi.product_code = 'GEN'
+    and rpi.booking_id = rbi.booking_id
+    and rpi.product_code = rbi.product_code
+    and rpi.item_no = rbi.item_no
+    group by rbi.booking_id, rbi.product_code, rbi.item_no, (adult+child+infant)
+    order by rbi.booking_id, rbi.product_code, rbi.item_no
+)temp where temp.pax != temp.cnt
+/
+
+
+select * from gv$session
+where client_info != 'closed'
+and username = 'TBX'
+/
+select * from v$sql
+where sql_id = '9769yxxy67r82'
+/
+select to_char(avail_date,'YYYY-MM-DD HH:MI:ss AM') from ws_htl_h2h_date
+/
+insert into calc_scheme_property (entry_id, scheme_id, name, value)
+select row_number() over (partition by scheme_id order by scheme_id) rn,  scheme_id, code, value
+from calc_control_param
+/
+
+select avail_date
+,ltrim(sys_connect_by_path(booking_id,','),',') bookings
+,ltrim(sys_connect_by_path(room_type,','),',') room_types
+,ltrim(sys_connect_by_path(rooms,','),',') rooms
+from
+(
+  select tt.avail_date, res_accom_room.booking_id, room_type, rooms
+  , row_number() over (partition by tt.avail_date order by tt.avail_date) rn
+  ,count(*) over (partition by tt.avail_date) cnt
+  from res_accom_room,
+  (
+                                      with t as( select ( to_date('2015-01-05','YYYY-MM-DD') )start_date, ( to_date('2015-01-06','YYYY-MM-DD') )end_date from dual )
+                                      select
+                                      start_date + level-1 as avail_date
+                                      from t
+                                      connect by end_date >= start_date + level-1
+                                  )tt
+  where room_type in ('DXCOC','DLXCO')
+  and (booking_id,item_no, product_code) in
+  ( select booking_id,item_no, product_code from res_accom_booking where reservation_id > -1 and hotel_name = 'Savannah Beach' )
+  and (booking_id,item_no, product_code) in
+  ( select booking_id,item_no, product_code from res_booking_item where product_code = 'HTL' and booking_status != 2000
+  and tt.avail_date between from_date and to_date
+  )
+)temp
+where rn = cnt
+start with rn = 1
+connect by prior avail_date = avail_date and prior rn = rn-1
+order by avail_date
+/
+
+ SELECT FIRST_NAME, SALARY,
+ ROW_NUMBER() OVER(PARTITION BY city ORDER BY city) xx
+ FROM employee
+ http://www.java2s.com/Tutorial/Oracle/0320__Analytical-Functions/ROWNUMBERwithPartition.htm
+ /
+
+select * from st_search_action
+where TRS_TIMESTAMP > '2015-01-05 13:30:00'
+and TRS_TIMESTAMP < '2015-01-05 13:45:00'
+and action = 'AMD'
+
+export ES_HEAP_SIZE=11g 423  ./bin/elasticsearch &
+
+select sup.code supplier, cs.name ship_name,
+listagg(ccg.code,',') within group (order by ccg.code) master_grades,
+listagg(ccg.name,',') within group (order by ccg.code)master_grade_names
+from cruise_cabin_category_group ccg
+inner join cruise_ship cs on ccg.cruise_line_id = cs.cruise_line_id and ccg.ship_no = cs.ship_no
+inner join supplier sup on sup.supplier_id = cs.cruise_line_id
+where ccg.cruise_line_id in (select supplier_id from h2h_info where h2h_id= 14 and active = 1)
+group by sup.code, cs.name order by cs.name
+/
+select cs.cruise_line_id, cs.name ship_name,
+listagg(ccg.code,',') within group (order by ccg.code) category_codes,
+listagg(ccg.name,',') within group (order by ccg.code)category_names
+from cruise_cabin_category_group ccg
+inner join cruise_ship cs on ccg.cruise_line_id = cs.cruise_line_id
+and ccg.ship_no = cs.ship_no
+where ccg.cruise_line_id in (select supplier_id from h2h_info where h2h_id= 14 and active = 1)
+group by cs.cruise_line_id, cs.name order by cs.name
+/
+select * from supplier where supplier_id in (20108,29571)
+/
+select * from cruise_line where cruise_line_id in (20108,29571)
+/
+
+
+MY SQL
+login as root
+mysql -u redtbx -p
+
+
+SET SESSION old_passwords=0;
+SET PASSWORD FOR my_user=PASSWORD('my_password');
+
+select segment_name,segment_type,bytes/1024/1024/1024 MB
+ from dba_segments
+ where segment_type='TABLE'  order by bytes desc
+
+
+update gen_product_type set product_id = (select product_id from GEN_PRODUCT_GROUP where code = 'TnA')
+where product_id in (select product_id FROM GEN_PRODUCT_GROUP
+WHERE CODE IN ('AM ACT', 'AT ACT', 'AZ ACT', 'BA ACT', 'BG ACT', 'HR ACT', 'CZ ACT', 'EG ACT', 'GE ACT', 'IN ACT', 'JO ACT', 'KG ACT', 'LB ACT', 'MV ACT', 'MO ACT', 'NP ACT', 'OM ACT', 'RO ACT', 'RU ACT', 'CS ACT', 'LK ACT', 'TZ ACT', 'TH ACT', 'TR ACT', 'AE ACt', 'UA ACT')
+)
+
+
+select * from res_booking_history where booking_id = 1000050
+/
+select * from res_booking_history where booking_id in (1000050 ,1499249,1499248,1499247) and code like '%OPTION_STATUS%'
+/
+select * from res_booking order by booking_id desc
+/
+select * from res_booking_history where booking_id not in ( select booking_id from res_booking_history )
+/
+select * from res_booking_item where booking_id in (1000050 ,1499249,1499248,1499247, 1499098)
+/
+select booking_id, min(to_char(booked_date,'YYYY-MM-DD HH:MI:ss AM')) from res_booking_item
+where booking_id in (1000050 ,1499249,1499248,1499247)
+group by booking_id
+/
+select systimestamp at time zone 'UTC' current_time_in_utc from dual
+/
+select systimestamp,systimestamp at time zone 'UTC' current_time_in_utc,
+systimestamp at time zone 'Us/Eastern' current_time_in_est,
+systimestamp at time zone 'US/Pacific' current_time_in_pst
+from dual
+/
+SELECT tzname, tzabbrev from V$TIMEZONE_NAMES where tzabbrev = 'GMT'
+/
+SELECT TZ_OFFSET('US/Eastern') FROM DUAL;
+/
+SELECT TZ_OFFSET('UTC') FROM DUAL;
+/
+SELECT TZ_OFFSET('US/Pacific') FROM DUAL;
+/
+select booking_id, min(booked_date) bkd1, min(to_char(booked_date,'YYYY-MM-DD HH:MI:ss AM')) bkd2, min(to_timestamp(to_char(booked_date,'YYYY-MM-DD HH:MI:ss AM'),'YYYY-MM-DD HH:MI:ss AM')) bkd3,
+min(to_timestamp(to_char(booked_date,'YYYY-MM-DD HH:MI:ss AM'),'YYYY-MM-DD HH:MI:ss AM')) at time zone 'UTC' bkd4
+from res_booking_item
+where booking_id in (1000050 ,1499249,1499248,1499247)
+group by booking_id
+/
+select * from res_booking_item group by booking_id, booked_date

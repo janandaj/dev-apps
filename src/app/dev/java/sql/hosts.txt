@@ -1,0 +1,105 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+10.10.141.76		tbxa.vhols.ads
+10.11.2.153			tbxbstage.vhols.ads
+10.11.2.158			svhtbxsb01.vhols.ads
+
+10.17.194.94		uat.tbxapp.rccl.com
+10.17.192.174		uat.tbxibe.rccl.com
+
+10.17.198.138 		tbxibe.rccl.com
+10.17.199.54 		tbxapp.rccl.com
+
+10.17.195.134		stage.tbxapp.rccl.com
+10.17.193.79		stage.tbxibe.rccl.com
+
+52.212.30.149 qa-holidays.flydubai.com
+52.212.30.149 qa-holidayspro.flydubai.com
+52.212.30.149 qa2-taapi.flydubai.com
+172.28.8.178 qa-bookholidays.flydubai.com
+172.28.8.178 qa-bookholidayspro.flydubai.com
+172.28.8.177 qa-sys-bookholidays.flydubai.com
+172.28.17.23 dev-holidays.flydubai.com
+172.28.17.23 dev-holidayspro.flydubai.com
+10.1.18.58 devpayments.flydubai.com
+
+10.10.141.76		tbxa.vhols.ads
+10.11.2.153			tbxbstage.vhols.ads
+10.11.2.158			svhtbxsb01.vhols.ads
+
+10.17.194.94		uat.tbxapp.rccl.com
+10.17.192.174		uat.tbxibe.rccl.com
+
+10.17.198.138 		tbxibe.rccl.com
+10.17.199.54 		tbxapp.rccl.com
+
+10.17.195.134		stage.tbxapp.rccl.com
+10.17.193.79		stage.tbxibe.rccl.com
+
+52.212.30.149 qa-holidays.flydubai.com
+52.212.30.149 qa-holidayspro.flydubai.com
+52.212.30.149 qa2-taapi.flydubai.com
+172.28.8.178 qa-bookholidays.flydubai.com
+172.28.8.178 qa-bookholidayspro.flydubai.com
+172.28.8.177 qa-sys-bookholidays.flydubai.com
+172.28.17.23 dev-holidays.flydubai.com
+172.28.17.23 dev-holidayspro.flydubai.com
+10.1.18.58 devpayments.flydubai.com
+
+172.28.8.179 uat-sys-bookholidays.flydubai.com
+172.28.8.181 uat-bookholidayspro.flydubai.com
+172.28.8.182 uat-bookholidays.flydubai.com
+54.76.118.202   uat-holidays.flydubai.com
+54.76.118.202   uat-holidayspro.flydubai.com
+172.28.8.147 uat-schbookholidays.flydubai.com
+
+
+WS_BOOKING_TYPES_WITH_FLIGHTS = 1,2,33554432
+MIN_CF0_CANDIDATES_TO_PROCESS = 2
+WS_CANDIDATE_LIMIT = 100
+WS_TOTAL_CANDIDATE_LIMIT = 1000
+FORCE_USE_OF_WS_CANDIDATE_CACHE = NO
+ENABLE_WS_HOLIDAY_STORE = NO
+DEFAULT_WS_HOLIDAY_COUNT = 10
+
+https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.0/java-docs-update.html
+
+
+http://192.168.3.56:6060/surf-search/v1/holidays?company=HFZ&division=AE&brand=Holidays&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=holiday_aggregation&resultCount=10&cityCodes=AMM,BAK,BEG,BUH,CMB,IST,MCT,TGD,PRG,SJJ,SOF,TBS,EVN
+
+http://192.168.3.56:6060/surf-search/v1/holidays?company=HFZ&division=AE&brand=Holidays&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&cityCodes=BAK,BUH,CMB,IST,TGD,PRG,SLL,TBS,EVN,ZNZ&propertyCodes=MEHPA,EAN627688,EAN263620,EAN236088,EAN325392,EAN510214,EAN776311,EAN487098,EAN638878,EAN273037,EAN417768,EAN647497,EAN272471,EAN253470,EAN306398,EAN447952,EAN515123,EAN372127,EAN254760,EAN473727&resultCount=10
+http://192.168.3.56:6060/surf-search/v1/holidays?company=HFZ&division=AE&brand=Holidays&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&propertyCodes=MEHPA,EAN627688,EAN263620,EAN236088,EAN325392,EAN510214,EAN776311,EAN487098,EAN638878,EAN273037,EAN417768,EAN647497,EAN272471,EAN253470,EAN306398,EAN447952,EAN515123,EAN372127,EAN254760,EAN473727&resultCount=10
+
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&cityCodes=DXB&propertyCodes=AUTSHRSUP,EAN333462&resultCount=10
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&propertyCodes=AUTSHRSUP,EAN333462&resultCount=10
+
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&propertyCodes=EAN106229,EAN106231,EAN106448,EAN115571,EAN118252&resultCount=10
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=holiday_aggregation&expandType=HTL.ALL&&cityCodes=PRG,BKK,TBS,AMM&resultCount=10
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=DXB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&&cityCodes=PRG,BKK,TBS,AMM&resultCount=10
+
+AHB
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=AHB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&propertyCodes=EAN333462&resultCount=10
+CMB
+https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=CMB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&propertyCodes=EAN333462&resultCount=10
+
+
+

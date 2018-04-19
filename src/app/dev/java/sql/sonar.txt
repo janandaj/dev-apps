@@ -1,0 +1,64 @@
+select * from cg_progress_stats
+where client_name = 'VH_6_7_2_MAIN'
+and project_name = 'it_codegen_tbx';
+
+select * from cg_processed_stats
+where client_name = 'VH_6_7_2_MAIN'
+and project_name = 'it_codegen_tbx';
+
+select * from issues where project_uuid = 'f9287597-46a9-4b19-8831-f4693d60923c'
+and severity = 'BLOCKER';
+
+select distinct status, resolution from issues;
+
+select max(date(FROM_UNIXTIME(issue_creation_date/1000))) generated_date from issues;
+
+FOR SONAR 8
+select project, severity, sum(cnt)issue_count, count(*)module_count, max(generated_date)latest_issue_date from
+(
+  select projects.name, SUBSTRING_INDEX(projects.name, '::', 1)project,
+  issues.project_uuid, issues.severity, count(*) cnt,
+  max(date(FROM_UNIXTIME(issue_creation_date/1000))) generated_date
+  from issues, projects
+  where issues.project_uuid = projects.uuid
+  and issues.status not in ('CLOSED','RESOLVED')
+  and issues.severity in ('BLOCKER','CRITICAL','MAJOR')
+  -- and projects.name like ('VH_6_7_2_MAIN%')
+  group by issues.project_uuid, issues.severity
+  order by issue_creation_date desc
+)temp
+where project in ('CODEGEN','VH_6_7_2_MAIN','DSN')
+group by project, severity;
+
+
+FOR MAIN SONAR
+select temp2.project, temp1.severity,
+sum(cnt)issue_count, count(*)module_count,
+max(issue_creation_date)latest_issue_date
+from
+(
+  select root_component_id, severity, issue_creation_date, count(*) cnt
+  from issues
+  where severity in ('BLOCKER','CRITICAL')
+  and status not in ('CLOSED','RESOLVED')
+  and
+  ( root_component_id in (select root_id from projects where kee like 'MTG_V4_6_10_2%' )
+    or root_component_id in (select root_id from projects where kee like 'V4_6_7_2%' )
+    or root_component_id in (select root_id from projects where kee like 'FDM%' )
+    or root_component_id in (select root_id from projects where kee like 'TTF%' )
+    or root_component_id in (select root_id from projects where kee like 'EMIRATES%' )
+    or root_component_id in (select root_id from projects where kee like 'V2_TA%' )
+    or root_component_id in (select root_id from projects where kee like 'EDEN%' )
+    or root_component_id in (select root_id from projects where kee like 'TBX_V4_6_7_2_WBE%' )
+    or root_component_id in (select root_id from projects where kee like 'JONVIEW%' )
+  )
+  group by root_component_id, severity
+)temp1,
+(
+  select root_id, SUBSTRING_INDEX(projects.kee, '::', 1)project
+  from projects
+  group by root_id
+)temp2
+where temp1.root_component_id = temp2.root_id
+group by temp2.project, temp1.severity
+;

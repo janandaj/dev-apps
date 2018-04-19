@@ -1,0 +1,78 @@
+go to E:\JENKINS_HOME_VH_TAGGED
+backup jobs folder. it has previous build history.
+go to jobs folder
+delete all builds folders
+go to E:\JENKINS_HOME_VH_TAGGED\jobs\_BuildInfoUpdate
+get config.xml
+replace all VH_5_11_5_BRANCH to VH_5_12_5_BRANCH
+All the config.xml should be replaced.
+check the path <customWorkspace>E:\travelboxv3\VH_5_12_5_BRANCH\</customWorkspace>
+goto jenkins 76:9090
+run the svn_Update
+
+
+delete all sub folders name is builds LINUX
+find -type d -name builds -exec rm -rf {} \;
+
+one machine can run only one jenkins. default port is 8080.
+Therefore install two tomcats
+F:\apache-tomcat-7.0.20-vh
+F:\apache-tomcat-7.0.20-vh-tag
+install another tomcat
+go to F:\apache-tomcat-7.0.20-vh\bin
+edit catalina.bat
+set TITLE=Virgin Build
+set JAVA_OPTS=%JAVA_OPTS% -DJENKINS_HOME=E:\JENKINS_HOME_VH_TAGGED
+go to F:\apache-tomcat-7.0.20-vh\conf
+edit server.xml
+specify port <Connector port="9090" protocol="HTTP/1.1"
+
+
+first u need to install tomcat. extract the zip. set the environment variables(CATALINA_HOME).add to path variable
+install java. SET JAVA_HOME. add to path variables.
+install(extarct) ant. add to path variabale.
+neet to copy two libs from ant lib folder. otherwise ftp will not be working
+commons-net-ftp-2.0.jar
+jakarta-oro-2.0.8.jar
+
+go to tomcat location. F:\apache-tomcat-7.0.20-vh\bin
+edit catalina.bat
+set TITLE=Virgin Build
+set JAVA_OPTS=%JAVA_OPTS% -DJENKINS_HOME=E:\JENKINS_HOME_VH_TAGGED
+
+set the port
+go to F:\apache-tomcat-7.0.20-vh\conf
+edit server.xml
+specify port <Connector port="9090" protocol="HTTP/1.1"
+
+put the jenkins.war to webapps folder.
+need to copy jobs folder and clean old entries.
+
+\\192.168.6.45\Software_To_Setup_Jenkins
+nishan nishan321
+
+extarct jenkins home.
+copy plugins. bulk builder, purge all
+
+once jenkins is running
+go to  manage jenking. enable security.
+
+
+in Jenkins config.xml file put
+<systemMessage>&lt;h1&gt; Main Code - TravelBox V4 &lt;/h1&gt;</systemMessage>
+
+
+install SilkSubVersion
+run command prompt run svn
+
+C:\Documents and Settings\tbx\Application Data\Subversion
+Edit Config
+[tunnels]
+ssh=D:\\plink.exe -l tbx -pw tbx321
+
+copy plink.exe
+plink.exe -l tbx -pw tbx321 192.168.0.6
+
+ssh=D:\\plink.exe -l tbx -pw tbx321
+
+

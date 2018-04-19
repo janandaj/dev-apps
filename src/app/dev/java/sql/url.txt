@@ -1,0 +1,647 @@
+-Xmx512m -XX:MaxPermSize=256m -Dhttp.keepAlive=false -Dcom.sun.xml.internal.ws.client.ContentNegotiation=pessimistic  -Dcom.sun.xml.ws.client.ContentNegotiation=pessimistic
+STATUS_UPDATER_CONFIG	B=Y,Y=Y,PA=Y,RD=Y,CYB=Y
+
+bin/plugin -i elasticsearch/marvel/latest
+
+Lusrmgr.msc
+regedit
+
+find in svn
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep IImageProcessor
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep ImageTextCapture
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep KohonenNetTextIdentifier
+
+svn checkout --username=tbx --password=tbx321 svn+ssh://192.168.0.6/usr/local/svnroot/branches/VH/VH_6_7_2_MAIN/CruiseManager
+
+
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep SafariLoadingClient
+Linux
+svn list -R file:///subversion/repository | grep filename
+Windows:
+svn list -R file:///subversion/repository | findstr filename
+
+http://192.168.0.215:8080/TravelBoxSearch/JCSAdmin.jsp
+
+mvn package -f TravelBoxSearch/pom.xml -Dcompile=i -Dwsdl=i -Dsurf=i
+mvn package -f AvailabilityCheckerService/pom.xml -Dcompile=i -Dwsdl=i
+mvn package -f ReservationManager/pom.xml -Dcompile=i -Dwsdl=i
+mvn package -f FaresManager/pom.xml -Dcompile=i -Dwsdl=i
+mvn package -f HolidayManagementService/pom.xml -Dcompile=i -Dwsdl=i
+mvndebug t7:run
+
+mvndebug t7:run > output.log 2>&1 &
+mvn package -f CopyLibs/pom.xml
+mvndebug t7:run-forked
+
+https://github.com/elasticsearch/elasticsearch/archive/v0.20.1.zip
+
+
+java -jar addenv.jar E:\JENKINS_HOME_MAIN_CODE\jobs VHQA66-43:8080
+
+ /sbin/ifconfig | less  to see the ip address
+
+ps p 6590 -L -o time,pid,tid,pcpu,tname,stat,psr | sort -n -k1 -r | head >> abc.log
+sudo -u rccl66qa jstack PID > /tmp/$(date +%Y%m%d)-jvm-thread-stack.txt
+sudo -u rccl66qa jstack PID > eeee.txt
+
+
+vi domain xml
+/TravelBoxSearch
+press Enter
+delete web module entry entire row [command DD]
+delete application ref below the file
+save file  [ ZZ   or  :wq ]
+without save [:q!]
+
+10.11.2.153:8484 Foundation Test
+10.11.2.153:8080 STAGING
+
+/usr/local/tbx/v4/glassfish/domains/v4qatbx_glassfish/lib
+
+GALILEO > A08DECLHRPHL/US
+AMADEUS\LONVH3100 > AN08DECLHRPHL/AUS
+
+echo > AMADEUS.log.0
+mvndebug t7:run > output.log 2>&1 &
+
+cd  /usr/local/tbx/tbx_v4/tomcat/logs/ && tbx_admin restart
+
+
+start putty.exe  svhtbxb07 -l tbx -pw C0mplex.
+
+ps aux | less
+ps -p PID -L -o time,pid,tid,pcpu
+jmap -F -heap:live,format=b,file=abc.bin PID
+jmap -F -dump:live,format=b,file=heap.bin 29008
+jmap -F -dump:format=b pid
+jmap -histo:live 29008
+jhat -J-mx132240m -stack false memdump_STG_20120514_aftr-test.bin
+ vncserver :10
+jmap -permstat <PID> > permstat.log
+
+
+1.97:7070 debug port 7330
+ cd apache/bin
+./catalina.sh jpda start
+
+192.168.1.55 tfdev tfdev321
+
+
+ll -ltr CMC*
+$ ls -lSr
+
+ll -rS
+
+du -ah Scheduler_Resources/
+
+
+df -h
+
+
+Delete files in the current directory above 500Kb
+find -size +500 | xargs rm
+
+1.97:7070 7330 ./catalina.sh jpda start
+
+
+
+
+dism /online /cleanup-image /spsuperseded
+
+
+nbtstat -A 192.168.0.76 show the computer name of the IP
+
+http://192.168.0.6/patch/?r=tbxPatch/admin
+http://192.168.6.251:9090/jenkins/
+
+tcdev debug 2002
+CG:Merge:merged from vh_phase2 upto 22750
+
+https://citrix.virginholidays.com/Citrix/AccessPlatform/site/default.aspx
+http://www.epathchina.com/power-switch-hidden-camera-for-home-security-support-tf-card-and-pc-connecting-p-5235.html
+
+/usr/local/jprofiler6/bin/jprofiler &
+vncserver -geometry 1280x1024
+
+
+floating licence Codegen 1921.168.0.2
+
+
+TO DELETE ARCHIVE LOG in 192.168.0.208
+username 	oracle
+password 	oracle@Vgin
+
+rman target sys/virgindb_cgen
+
+delete archivelog all;
+exit
+
+
+\bpw_
+
+last number regex(\d+)"*$
+
+svn+ssh://192.168.0.6/usr/local/svnroot/
+
+msconfig regedit Chkdsk /f /r
+nohup
+
+Preferres DNS 192.168.0.4    203.115.0.18
+Alternate DNS 203.115.0.1    203.115.0.46
+
+gajaba 192.168.0.37
+
+cat /dev/null > ../domains/loadtest/logs/dashboard_17062011.log
+
+scp PackageBuilder.war virgin@192.168.1.54:/usr/local/tbx/glassfish/domains/vh_dev_test2/autodeploy
+scp PackageBuilder.war vhv4@192.168.1.97:/usr/local/tbx/v4/apache-tomcat-6.0.20/webapps
+scp ReservationManager.war vhv4qa@192.168.1.97:/usr/local/tbx/vhv4qa/apache-tomcat-6.0.20/webapps
+
+
+Remote Desktop --> run --> mstsc
+
+citrix live db B1uep1anet11
+staging db M4tr1x.
+
+mstsc
+regedit
+
+
+Ruwan virgin33 10.11.2.58 tbx C0mplex.
+10.11.2.156 remote desktop
+
+Sujeewa.Codegen		T0mcat 6.0
+Ruwan.Codegen – Penguin2
+
+
+Gayathri.Codegen                         vhTeam@05
+Madhugeeth.Codegen                       virgin@321
+Niluka.Codegen                           virgin@321
+Dhanith.Codegen                          virgin@321
+Ishan.Codegen                            virgin@321
+Salindaa.Codegen                         virgin@321
+Jananda.Codegen                          vhTeam@05
+Penguin05
+
+sujeewa.codegen          Anac0nda.
+ashani.codegen           C0braMarkIII
+chami.codegen            Pyth0n.
+gayathri.codegen         S1dewinder.
+jananda.codegen          Hutt0nOrbital
+lahiru.codegen           El1teDangerous
+nimalka.codegen          V1perMarkIII
+madhugeeth.codegen       V1perMarkIV
+tharushi.codegen         Imper1alClipper
+pramodya.codegen         Imper1alCutter
+pahan.codegen            FederalGunS1p
+charmalee.codegen        FederalDropSh1p
+dilini.codegen           FerDerLance!
+
+Serial FCT8003525534823
+UID2 	E117EB1BD29348F1A106DBAB757C4D79
+
+
+live db B1uep1anet11
+
+vh Codegen321 google.doc
+
+
+192.168.0.42 cgtask cgtask_cglinux
+/usr/local/tbx/glassfish/bin
+
+-Dtbx.server.type=GLASSFISH -Dtbx.domain=C
+-Dtbx.server.type=GLASSFISH -Xmx256m
+
+vh_qa 97:9009  192.168.1.79 : 9009
+vh_dev 1.20:9010
+vh_main_dev 97:9007
+vh_uat 97:9008
+
+192.168.1.54:5050 debug 5151
+
+192.168.6.71 tbx tbx321 serverbase and virgin web test
+
+find vh_dev_test2/applications -name MANIFEST.MF |grep -v temp_ | grep -v war_ |  xargs cat | grep Implementation
+find                           -name MANIFEST.MF |grep -v temp_ | grep -v war_ |  xargs cat | grep Implementation
+
+
+
+wsimport -s /usr/local/tbx/glassfish/bin/test/src -d /usr/local/tbx/glassfish/bin/test/classes -keep http://192.168.0.97:2020/ReservationManager/ReservationManagerService?wsdl
+
+
+wsimport -s /home/tbx/notemgr/src -d /home/tbx/notemgr/classes -keep http://192.168.0.97:8080/NoteManager/NoteManagerService?wsdl
+wsimport -s /home/tbx/taskmgr/src -d /home/tbx/taskmgr/classes -keep http://192.168.0.97:8080/TaskManagerService/TaskManagerServiceService?wsdl
+wsimport -s /home/virgin/postcode/src -d /home/virgin/postcode/classes -keep http://services.postcodeanywhere.co.uk/uk/lookup.asmx?wsdl
+
+ /usr/local/codegen/glassfish/bin
+ ./asadmin stop-domain domain1
+ ./asadmin start-domain domain1
+
+chmod 777 foldername (give read write permission)
+
+cvs co -d VH_4_2 -r VH_4_2_BRANCH travelboxv3/codegen
+
+chkdsk check disk for bad sectors
+
+tbx_cglinux /sbin/service httpd start
+ftp 	/etc/init.d/vsftpd start
+
+cd sbin and ftpd start_udev
+
+su root
+
+/etc/init.d/httpd start
+/etc/init.d/vsftpd start
+
+./bin/asadmin stop-domain domain1
+./bin/asadmin start-domain domain1 &
+
+
+Server Start		./serverstart.sh >output.log 2>&1 &
+
+UK Bugzilla		https://161.76.28.41/bugzilla/
+Local Bugzilla		http://192.168.0.18/bugzilla
+
+virgin bugzilla 	http://161.76.28.59/bugzilla_vg/bugzilla/
+
+cd  app/travelboxadminclient
+java -jar travelboxadminclient.jar cg Codegen321
+
+e16 2rd
+RH10 1WW
+RM8 2BZ
+RH10 6DF
+EW1 234
+
+vi /etc/httpd/conf/httpd.conf
+
+
+
+staging svhtbxb01 tbx C0mplex.
+
+sqlplus tbx/tbx@TBXA03
+
+
+10.11.2.58 foundation test
+
+XMLBeanParser
+XMLRuleParser
+EPath
+ImlHandler
+XmlBeanUtility
+
+
+svn patch merge page 20 22750 VH 2011-12-27
+
+
+select sc.*, tr.* from db_audit.calc_scheme sc
+inner join db_audit.AUDIT_TRS tr on sc.trs_id = tr.trs_id
+order by TR.TRS_TIMESTAMP
+
+
+windows ftp open 192.168.0.97
+mget /usr/local/tbx/glassfish/domains/vh_uat/tbx_jars/agent.xml
+mput
+
+
+
+   1. Close Eclipse
+   2. Delete <workspace>/.metadata/.plugins/org.eclipse.jdt.core/*.index
+   3. Delete <workspace>/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+   4. Start Eclipse again
+
+ END of TNS Data Channel
+ALTER SYSTEM SET result_cache_max_size='0' SCOPE=MEMORY SID='*';
+
+public static String createItemKey( Object... args )
+    {
+        SplitString ss = new SplitString( ":" );
+        for( Object arg : args )
+        {
+            ss.append( arg.toString() );
+        }
+        return ss.toString();
+    }
+
+QA 6.5
+192.168.1.118
+tail -f /usr/local/tbx/v4/v4qa/apache-tomcat-7.0.32/logs/server.log
+v4qa/v4qa321
+
+# getenforce
+Enforcing
+
+# vi /etc/selinux/config
+Change the SELINUX=enforcing to SELINUX=disabled and reboot your server
+
+[Server1]# getsebool -a | grep ftp
+ftp_home_dir –> on (change that to on in ur case this option is off)
+
+[Server1]# setsebool -P ftp_home_dir on
+
+$ gunzip file.gz
+$ gzip -d file.gz
+
+jmap -F -histo:live 20560 >> logname.log
+jmap -F -dump:live,format=b,file=heap.bin 23244
+jmap -F -dump:live,format=b,file=heap.dump.out 24948
+jmap -permstat <PID> > permstat.log
+
+free
+
+RCLVPNuser
+M7$gjxm7E
+
+webprod
+codegen/codegen@rccl
+
+
+nohup java -jar PriceCheck.jar > output.log &
+
+Tomcat Maven profiling
+Copy setenv.bat from doc folder , (You can add additional VM parameter). to target/tomcat/bin
+Run LocalServer with mvn t7:run-forked
+Run LocalServer with mvndebug t7:run-forked
+To stop tomcat - Open new console and execute mvn t7:stop-forked
+
+SANDBOX 10.11.2.158 tbx C0mplex.
+ES 2.2 (new server) - 10.11.2.236
+sudo su
+/etc/elastic
+
+ES 1 (old server) - 10.11.2.106
+
+ll *.jar | wc
+free
+Rasitha - load ship info - spring - BookingItemResourceAssembler
+
+http://localhost:9091/search?star=3&checkin=&pax=2&occupancy=2-0-0&bookingType=HOTE&templateRef=htl-tophit-aggr
+
+./plugin.bat install marvel-agent
+./plugin.bat install license
+./kibana.bat plugin --install elastic/sense
+
+https://github.com/elasticsearch/elasticsearch/archive/v2.2.0.zip
+
+JarFinder TravelBoxSearch
+TestCompile compile.xml TravelBoxSearch
+ESUtil ensureGreen ESCoordinator
+
+192.168.2.107 root or surfblue
+
+Kasun.Amarasinghe
+J3vWEn34RTWJpCSe
+sudo su - tomcat
+
+Pahan.Mapalagama
+q;X7zH(H]SM@7Wab
+
+Anuruddha.Sampath
+q;X7zH(H]SM@7Wab
+
+JUMP Server IP :- 172.29.7.10
+Account :- dxb101235-Flydubai@22331111
+Account :- dxb101241-Flydubai@09988776
+Account :- dxb101175-Flydubai@67867888
+
+Rasitha.Rathnayake
+Ah&p_8B%3#8u2(7%
+Spcg7Y7tPGeHtqBf
+
+User : rouser
+Password : ro567TBX
+
+JUMP SERVER- 172.29.7.10, Domain COMMERCIAL
+DXB101234
+Welcome01
+tbxCG73
+
+https://qa-bookholidays.flydubai.com/listing?ci=FLT_20180219_CMB_60_DXB_60_*_*_0,HTL_20180219_20180223_DXB_*,FLT_20180223_DXB_60_CMB_60_*_*_0&pax=2-1-0-0&childDob=2013&locale=en&expandType=HTL.ALL&holidayType=COMH&searchType=0&currency=AED&d=DXB
+https://qa-bookholidays.flydubai.com/listing?ci=FLT_20180219_CMB_60_DXB_60_*_*_0,HTL_20180219_20180222_DXB_*,FLT_20180222_DXB_60_CMB_60_*_*_0&pax=2-1-0-0&childDob=2009&locale=en&expandType=HTL.ALL&holidayType=COMH&searchType=0&currency=AED&d=DXB
+https://qa-bookholidayspro.flydubai.com/listing?ci=FLT_20180219_CMB_60_DXB_60_*_*_0,HTL_20180219_20180222_DXB_*,FLT_20180222_DXB_60_CMB_60_*_*_0&pax=2-1-0-0&childDob=2013&locale=en&expandType=HTL.ALL&holidayType=COMH&searchType=0&currency=AED&d=DXB
+
+https://qa-sys-bookholidays.flydubai.com/surf-search/docs
+
+5453010000100560
+Expiry : DEC 2021
+CVV : 123
+http://gitlab.codegen.net/V4/TRUNK/commit/67fd23e0afa4d7df4163ae916af57be2dab78de9
+
+keytool -list -keystore cacerts
+keytool -importcert -file DigiCertGlobalRootCA.crt -alias DigiCertGlobalRootCA -keystore cacerts
+keytool -importcert -file DigiCertSHA2SecureServerCA.crt -alias DigiCertSHA2SecureServerCA -keystore cacerts
+
+keytool -importcert -file holidaysflydubaicom.crt -alias holidaysflydubaicom -keystore cacerts
+
+download cert file from firefox
+copy it to linux machine
+add it to java home
+keytool -keystore /usr/local/java/jdk1.8.0_25/jre/lib/security/cacerts -import -alias DigiCertGlobalRootCA4 -file /usr/local/tbx/fzdev/apache-tomcat-8.0.21/DigiCertGlobalRootCA.crt
+keytool -keystore /usr/local/java/jdk1.8.0_25/jre/lib/security/cacerts -import -alias DigiCertSHA2SecureServerCA4 -file /usr/local/tbx/fzdev/apache-tomcat-8.0.21/DigiCertSHA2SecureServerCA.crt
+
+keytool -keystore /usr/local/java/jdk1.8.0_31/jre/lib/security/cacerts -import -alias DigiCertGlobalRootCA4 -file /usr/local/tbx/mtg611/apache-tomcat-8.0.21/DigiCertGlobalRootCA.crt
+keytool -keystore /usr/local/java/jdk1.8.0_31/jre/lib/security/cacerts -import -alias DigiCertSHA2SecureServerCA4 -file /usr/local/tbx/mtg611/apache-tomcat-8.0.21/DigiCertSHA2SecureServerCA.crt
+
+
+VIRGIN
+ES 2.2 (new server) - 10.11.2.236
+ES 1 (old server) - 10.11.2.106
+http://svhtbxes02.vhols.ads:5601/app/sense
+
+File count
+ls -l | wc
+
+delete all sub folders name is builds
+find -type d -name builds -exec rm -rf {} \;
+
+find file name in side jar files
+find ./ -name "*.jar" | xargs grep log4j.properties
+
+4dca0b268f154f2e9789fa52f4e5a6f9
+/home/vhjen/.jenkins/secrets/initialAdminPassword
+svn checkout "svn+ssh://tbx@192.168.0.6/usr/local/svnroot/branches/VH/VH_6_7_2_MAIN/codegen"
+
+svn checkout "svn+ssh://tbx@192.168.0.6/usr/local/svnroot/trunk/travelboxv4/extensions/framework/it_codegen_ext_security"
+
+svn --username tbx checkout "svn+ssh://192.168.0.6/usr/local/svnroot/branches/VH/VH_6_7_2_MAIN/codegen/CruiseSearch"
+svn checkout "svn+ssh://192.168.0.6/usr/local/svnroot/branches/VH/VH_6_7_2_MAIN/codegen/GDSQueueClient"
+
+$ export CATALINA_OPTS="-DJENKINS_HOME=/usr/local/tbx/VHJEN/JENKINS_HOME_V4_6_7_2_MAIN/ -Xmx512m"
+export JAVA_HOME=/usr/local/java-current
+export PATH=$PATH:$JAVA_HOME/bin/
+export JENKINS_HOME=/usr/local/tbx/VHJEN/JENKINS_HOME_V4_6_7_2_MAIN
+export M2_HOME=/usr/local/tbx/VHJEN/apache-maven-3.3.9
+export M2=$M2_HOME/bin
+export MAVEN_OPTS=-Xms256m
+export MAVEN_OPTS=-Xmx512m
+export PATH=$M2:$PATH
+export CATALINA_OPTS="-DJENKINS_HOME=/usr/local/tbx/VHJEN/JENKINS_HOME_V4_6_7_2_MAIN/ -Xmx512m"
+
+
+Delete many files in folder
+find . -type f -delete
+find . -type f -print -delete
+
+http://192.168.1.80:8080/search?ontotext=baha&ontoindex=0&checkin=&checkout=&pax=2&filters=true&size=20&loccode=&locname=&loctype=&occupancy=2-0-0&roomwise=false&displayText=Bahamas&bookingType=CRUI&productSet=H&domainRef=&templateRef=cru-tophit-aggrnested
+http://localhost:8080/TravelBoxSearch/surf/search?ontotext=baha&ontoindex=0&checkin=&checkout=&pax=2&filters=true&size=20&loccode=&locname=&loctype=&occupancy=2-0-0&roomwise=false&displayText=Bahamas&bookingType=CRUI&productSet=H&domainRef=&templateRef=cru-tophit-aggrnested
+
+http://192.168.2.106:8080/sniff/sniff-holiday-search.html
+cru-tophit-aggrnested CRUI
+
+http://localhost:8080/TravelBoxSearch/surf/search?ontotext=cocobay&ontoindex=0&checkin=01%2F07%2F2017&checkout=&pax=2&filters=true&size=20&loccode=&locname=&loctype=&occupancy=2-0-0&roomwise=true&displayText=&bookingType=HOTE&productSet=H&domainRef=&templateRef=htl-tophit-aggr
+
+http://192.168.0.123/frmError.aspx
+dhammika.kariyawasam@gmail.com
+
+find the folders in windows command prompt
+dir <Folder Name> /AD /s
+
+delete all .class files
+del *.class /s
+
+rmdir .svn /s
+
+go to /home/vhjen
+show hidden files = ll -la
+cat .bash_profile
+
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+findstr /vixg:C:\Users\jananda\Desktop\old.txt C:\Users\jananda\Desktop\new.txt > C:\Users\jananda\Desktop\difference.txt
+
+PATH=$PATH:$HOME/bin
+export JAVA_HOME=/usr/local/java/jdk1.8.0_31
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=$JAVA_HOME/lib
+export JRE_HOME=$JAVA_HOME/jre
+export JENKINS_HOME=/usr/local/tbx/VHJEN/JENKINS_HOME_V4_6_7_2_MAIN
+export M2_HOME=/usr/local/tbx/VHJEN/apache-maven-3.3.9
+export M2=$M2_HOME/bin
+export MAVEN_OPTS=-Xmx512m
+export PATH=$M2:$PATH
+export PATH
+
+
+svn co svn+ssh://tbx@192.168.0.6/usr/local/svnroot/branches/VH/VH_S19/codegen/CommonLibraries
+
+G:\\plink.exe -l jananda -pw jananda321
+
+HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\RemovableStorageDevices
+HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\RemovableStorageDevices
+deny_all
+value should be 0
+
+For RCCL Branch:
+svn+ssh://192.168.0.6/usr/local/svnroot/branches/V4/V4_6_7_2
+
+RCCL:[jira task id]:[comment]:G_RCCLSURF
+RCCL:SURF-2233:Hotelbeds gateway enhancement:G_RCCL-SURF
+
+CG:[jira task id]:[comment]:G_EXT
+CG:SURF-2244:Implemented search endpoints:G_EXT
+
+it.codegen.tbx.extension.surf.ExtDIConfiguration#init
+
+jenkins-rccl
+rccl321
+
+nohup ./kibana &
+chown -R elastic:elastic kibana-4.4.1-linux-x64
+./elasticsearch -d
+netstat -pln | grep 5601 then you can get the process id and kill -9 13304
+./catalina.sh jpda start
+
+./bin/kibana plugin --install elastic/sense
+
+IMEI 357133030612715
+UNLOCK CODE 46059238
+FLSH CODE V63805282
+
+cd G:\VH_CODE\V4_6_7_2\travelboxv4\webapp\CruiseFlex
+ng serve
+
+chown -R jtest elasticsearch-5.1.2
+chown :jtest elasticsearch-5.1.2
+vi ~/.bash_profile set JAVA_HOME
+
+https://codegen.atlassian.net/browse/CG-402
+
+venitaban/jYgZ6K7k3
+
+svn+ssh://192.168.0.6/usr/local/svnroot/branches/FDM_27022010_BRANCH
+
+git reset HEAD~1
+
+Create branch from a specific commit
+$ git checkout -b FZ_6.11.8.9_NEW 6fdf3da7
+
+Then push the new branch
+$ git push origin FZ_6.11.8.9_NEW
+
+git branch -m FZ_6.11.8.9 DEPRECTATE_FZ_6.11.8.9
+git push origin :FZ_6.11.8.9 DEPRECTATE_FZ_6.11.8.9
+git push origin DEPRECTATE_FZ_6.11.8.9
+
+5453010000100560
+Expiry : DEC 2021
+CVV : 123
+
+POST surf-cnd-single/cnd/FLT-HTL_AZART_20180406/_update
+{
+    "script" : {
+        "inline": "ctx._source.poa += params.count",
+        "lang": "painless",
+        "params" : {
+            "count" : 1
+        }
+    }
+}
+
+POST surf-cnd-single/cnd/FLT-HTL_EAN106229_20180406/_update
+{
+    "script" : {
+        "inline": "ctx._source.poa += params.count",
+        "lang": "painless",
+        "params" : {
+            "count" : -1
+        }
+    }
+}
+
+POST surf-cnd-single/cnd/FLT-HTL_EAN236088_20180406/_update
+{
+    "script" : {
+        "inline": "ctx._source.poa += params.count",
+        "lang": "painless",
+        "params" : {
+            "count" : -1
+        }
+    }
+}
+
+POST surf-cnd-single/cnd/FLT-HTL_EAN263620_20180406/_update
+{
+    "script" : {
+        "inline": "ctx._source.poa += params.count",
+        "lang": "painless",
+        "params" : {
+            "count" : -1
+        }
+    }
+}
+
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep IImageProcessor
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep ImageTextCapture
+svn list -R svn+ssh://192.168.0.6/usr/local/svnroot/ | grep KohonenNetTextIdentifier
+
+Linux
+svn list -R file:///subversion/repository | grep filename
+Windows:
+svn list -R file:///subversion/repository | findstr filename
