@@ -102,4 +102,35 @@ CMB
 https://qa-sys-bookholidays.flydubai.com/surf-search/v1/holidays?company=HFZ&division=AE&brand=City&occupancy=2A-0C-0I&distChannel=U&depcode=CMB&currency=AED&locale=en&bookingType=COMH&templateRef=package_tophits&expandType=HTL.ALL&propertyCodes=EAN333462&resultCount=10
 
 
+install python
+python --veriosn
+pip install youtube-dl
+youtube-dl --version
+
+https://dzone.com/articles/easy-javascript-part-11-function-expressions-and-f?edition=343095&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-12-05
+https://blog.risingstack.com/node-hero-tutorial-getting-started-with-node-js/
+
+youtube-dl  --username en.rasi@gmail.com --password rasithacg321 https://www.udemy.com/sasscourse
+
+youtube-dl  --username en.rasi@gmail.com --password rasithacg321 https://www.udemy.com/the-complete-guide-to-angular-2
+
+spring jaxb-mixing annotation to dynamically hide resource variables
+
+youtube-dl  --username jananda@gmail.com --password jana198265 https://www.udemy.com/introduction-cloud-computing
+youtube-dl  --username dhammika.kariyawasam@gmail.com --password dhammika321 https://www.udemy.com/storageintro
+youtube-dl  --username en.rasi@gmail.com --password rasithacg321 https://www.udemy.com/php-mysql-tutorial
+
+youtube-dl  --username diasmvds@gmail.com --password Sampath@321 https://www.udemy.com/the-complete-javascript-course
+youtube-dl  --username jananda@gmail.com --password jana198265 https://www.udemy.com/react-basic-in-just-1-hour
+youtube-dl  --username jananda@gmail.com --password jana198265 https://www.udemy.com/react-vs-angular-vs-vuejs-by-example
+youtube-dl  --username jananda@gmail.com --password jana198265 https://www.udemy.com/essentials-in-javascript-es6
+
+https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview
+
+youtube-dl  --username dhammika.kariyawasam@gmail.com --password dhammika321 https://www.udemy.com/react-the-complete-guide-incl-redux
+
+
+youtube-dl https://www.youtube.com/watch?v=msXL2oDexqw
+
+
 
