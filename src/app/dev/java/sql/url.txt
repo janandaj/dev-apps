@@ -663,3 +663,6 @@ https://courses.in28minutes.com/p/maven-tutorial-for-beginners-in-5-steps
 https://courses.in28minutes.com/p/junit-tutorial-for-beginners
 https://courses.in28minutes.com/p/mockito-for-beginner-in-5-steps
 https://courses.in28minutes.com/p/in28minutes-course-guide
+
+https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2
+https://memorynotfound.com/spring-boot-spring-data-jpa-hibernate-h2-web-console/
