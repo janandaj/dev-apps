@@ -666,3 +666,8 @@ https://courses.in28minutes.com/p/in28minutes-course-guide
 
 https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-2-jpa-with-hibernate-and-h2
 https://memorynotfound.com/spring-boot-spring-data-jpa-hibernate-h2-web-console/
+https://docs.spring.io/spring-boot/docs/2.0.1.RELEASE/reference/htmlsingle/#using-boot-starter
+https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-starters
+http://www.baeldung.com/thymeleaf-in-spring-mvc
+https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
+https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html
