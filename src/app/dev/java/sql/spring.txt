@@ -143,3 +143,7 @@ Many of java server-side applications interested more in low latency than pure t
 The general idea of CMS GC is using extra threads (=extra CPU cores) to avoid/reduce full GC occurrences. Usully this provides lower latency. Not a good option for your task (test is CPU bound, throughput focused).
 
 G1 targets to solve problem of big GC pauses with huge heap and provide lower latency than older ParallelGC. Not the best option for your task too (heap is not huge, test is throughput focused).
+
+
+https://www.codeproject.com/Articles/820877/Support-Both-Json-and-XML-Serializations-in-Spring
+https://spring.io/guides/gs/spring-boot/
