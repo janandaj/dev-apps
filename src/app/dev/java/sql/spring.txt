@@ -147,3 +147,7 @@ G1 targets to solve problem of big GC pauses with huge heap and provide lower la
 
 https://www.codeproject.com/Articles/820877/Support-Both-Json-and-XML-Serializations-in-Spring
 https://spring.io/guides/gs/spring-boot/
+
+https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html
+https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
+http://www.baeldung.com/thymeleaf-in-spring-mvc
