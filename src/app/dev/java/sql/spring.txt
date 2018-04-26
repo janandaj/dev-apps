@@ -159,3 +159,6 @@ http://www.baeldung.com/thymeleaf-in-spring-mvc
 http://www.baeldung.com/spring-thymeleaf-3
 
 https://github.com/spring-guides/gs-serving-web-content
+
+https://stackoverflow.com/questions/38370011/thymeleaf-button-click-to-call-http-delete-method?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+https://www.thymeleaf.org/doc/articles/standardurlsyntax.html
