@@ -671,3 +671,15 @@ https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/s
 http://www.baeldung.com/thymeleaf-in-spring-mvc
 https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
 https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html
+
+webstorm
+http://jetbrains.license.laucyun.com
+a. http://jetbrains.license.laucyun.com (In Silicon Valley, Only support lower of 2017.3.)
+b. http://207.246.109.4:8000 (In Los Angeles, Stop on April 30th.)
+c. http://207.246.114.239:8000 (In Miami, Stop on April 30th.)
+d. http://35.176.254.4:8000 (In London)
+
+tested and working 17 June 2017 with Webstorm 2017.1:
+http://idea.iteblog.com/key.php
+http://idea.imsxm.com/
+http://www.aku.vn/idea
