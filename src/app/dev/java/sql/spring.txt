@@ -150,11 +150,12 @@ https://spring.io/guides/gs/spring-boot/
 
 https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html
 https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
-http://www.baeldung.com/thymeleaf-in-spring-mvc
-
 https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.pdf
+
 https://www.mkyong.com/spring-boot/spring-boot-hello-world-example-thymeleaf/
 http://www.mkyong.com/spring-boot/spring-boot-hello-world-example-jsp/
+
+http://www.baeldung.com/thymeleaf-in-spring-mvc
 http://www.baeldung.com/spring-thymeleaf-3
 
 https://github.com/spring-guides/gs-serving-web-content
