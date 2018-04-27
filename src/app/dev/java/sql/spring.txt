@@ -162,3 +162,10 @@ https://github.com/spring-guides/gs-serving-web-content
 
 https://stackoverflow.com/questions/38370011/thymeleaf-button-click-to-call-http-delete-method?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 https://www.thymeleaf.org/doc/articles/standardurlsyntax.html
+
+https://dzone.com/articles/reactive-programming-with-spring-webflux
+https://dzone.com/articles/reactive-streams-in-java-9
+http://www.baeldung.com/java-9-reactive-streams
+https://aboullaite.me/reactive-streams-example-java-9/
+https://www.homeaffairs.gov.au/Trav/Visa-1/189-
+https://www.homeaffairs.gov.au/visas/supporting/Pages/skilled/the-points-table.aspx
