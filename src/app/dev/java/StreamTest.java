@@ -1,5 +1,8 @@
 package app.dev.java;
 
+import it.codegen.CGTimestamp;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.junit.Test;
 
 import java.io.File;
@@ -10,16 +13,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -30,6 +40,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
 import java.util.StringJoiner;
+import java.util.TimeZone;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -58,6 +69,11 @@ public class StreamTest
 		String x = String.valueOf( h2hIds );
 		System.out.println( h2hIds );
 		System.out.println( x );
+
+
+		String durations = "5,7,4,10";
+		int[] durationArray = Arrays.stream( durations.split( "," ) ).mapToInt( Integer::parseInt ).toArray();
+		Arrays.stream( durationArray ).forEach( System.out::println );
 
 	}
 
@@ -204,6 +220,142 @@ public class StreamTest
 		System.out.println( nowTime );
 		System.out.println( insertedTime );
 		System.out.println( elaspseTime );
+
+	}
+
+	@Test
+	public void testTimeZones()
+	{
+		String[] ids = TimeZone.getAvailableIDs();
+
+		for ( String id : ids )
+		{
+			TimeZone tz = TimeZone.getTimeZone( id );
+			System.out.println( tz.getID() + " = " + tz.getDisplayName() );
+		}
+		System.out.println( "_________________________________________________________" );
+
+		for ( String id : ids )
+		{
+			TimeZone tz = TimeZone.getTimeZone( id );
+			System.out.println( tz.toZoneId() );
+		}
+		System.out.println( "_________________________________________________________" );
+
+		List<String> zoneList = new ArrayList<>( ZoneId.getAvailableZoneIds() );
+		zoneList.stream().sorted().forEach( System.out::println );
+
+	}
+
+	@Test
+	public void testHolidayTimeZone()
+	{
+		String TZ_DATE_FORMAT = "dd-M-yyyy hh:mm:ss a";
+		try
+		{
+			int expiryHours = 24;
+			String[] divTimeZoneIds = new String[] { "Pacific/Kiritimati","America/New_York", "EST", "HST", "MST", "BPT", "PLT", "Asia/Yerevan", "Pacific/Apia", "Asia/Tokyo", "Etc/GMT-4", "Etc/GMT-7", "America/Porto_Acre","Australia/Melbourne","America/Barbados","Africa/Nairobi" };
+
+			CGTimestamp bkgDate = new CGTimestamp();
+			bkgDate.add( Calendar.HOUR, expiryHours );
+
+			SimpleDateFormat sdf = new SimpleDateFormat( TZ_DATE_FORMAT );
+			SimpleDateFormat formatter = new SimpleDateFormat( TZ_DATE_FORMAT );
+
+			for ( String divTimeZoneId : divTimeZoneIds )
+			{
+				TimeZone divTimeZone = TimeZone.getTimeZone( divTimeZoneId );
+				sdf.setTimeZone( divTimeZone );
+
+				Timestamp date = bkgDate._getSQLTimestamp();
+				String sDateInDivZone = sdf.format( date ); // Convert to String first
+				Date dateInDivZone = formatter.parse( sDateInDivZone ); // Create a new Date object
+				CGTimestamp cgTimestamp = new CGTimestamp( dateInDivZone );
+
+
+				System.out.println( date );
+				System.out.println( sDateInDivZone );
+				System.out.println( dateInDivZone );
+				System.out.println( cgTimestamp );
+				System.out.println( divTimeZone.getID() + " - " + divTimeZone.getDisplayName() );
+				System.out.println( "--------------------------" );
+				System.out.println();
+			}
+
+		}
+		catch ( Exception e )
+		{
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void anotherTime()
+	{
+		Calendar instance = Calendar.getInstance( TimeZone.getTimeZone( "Europe/London" ) );
+		Date date = instance.getTime();
+		System.out.println( date );
+
+		GregorianCalendar instance2 = new GregorianCalendar( TimeZone.getTimeZone( "Europe/Athens" ) );
+		instance2.setTime( instance.getTime() );
+		System.out.println( instance2.getTime() );
+
+		//---------------
+
+		DateFormat formatter = new SimpleDateFormat( "MM/dd/yyyy HH:mm:ss Z" );
+		formatter.setTimeZone( TimeZone.getTimeZone( "Europe/London" ) );
+		System.out.println( formatter.format( date ) );
+
+		formatter.setTimeZone( TimeZone.getTimeZone( "Europe/Athens" ) );
+		System.out.println( formatter.format( instance2.getTime() ) );
+
+		// ------------
+		DateTimeZone timeZoneLondon = DateTimeZone.forID( "Europe/London" );
+		DateTimeZone timeZoneAthens = DateTimeZone.forID( "Europe/Athens" );
+
+		DateTime nowLondon = DateTime.now( timeZoneLondon );
+		DateTime nowAthens = nowLondon.withZone( timeZoneAthens );
+		DateTime nowUtc1 = nowLondon.withZone( DateTimeZone.UTC );
+
+		//-------------------
+		ZoneId zoneMontréal = ZoneId.of( "America/Montreal" );
+		ZonedDateTime nowMontréal = ZonedDateTime.now( zoneMontréal );
+
+		ZoneId zoneTokyo = ZoneId.of( "Asia/Tokyo" );
+		ZonedDateTime nowTokyo = nowMontréal.withZoneSameInstant( zoneTokyo );
+
+		ZonedDateTime nowUtc2 = nowMontréal.withZoneSameInstant( ZoneOffset.UTC );
+
+		//-------------------
+		try
+		{
+			String dateString = "14 Jul 2014 00:11:04 CEST";
+			date = formatter.parse( dateString );
+			System.out.println( formatter.format( date ) );
+
+			// Set the formatter to use a different timezone - Indochina Time
+			formatter.setTimeZone( TimeZone.getTimeZone( "Asia/Bangkok" ) );
+			System.out.println( "ICT time : " + formatter.format( date ) );
+		}
+		catch ( ParseException e )
+		{
+			e.printStackTrace();
+		}
+
+		//-------------------
+		ZonedDateTime.now( ZoneId.of( "Pacific/Auckland" ) ).withZoneSameInstant( ZoneId.of( "Asia/Kolkata" ) );
+		// Current moment in a particular time zone.
+		//  Same moment adjusted into another time zone.
+
+		//----------------------
+		DateTimeZone timeZoneLondon1 = DateTimeZone.forID( "Europe/London" );
+		DateTimeZone timeZoneKolkata = DateTimeZone.forID( "Asia/Kolkata" );
+		DateTimeZone timeZoneNewYork = DateTimeZone.forID( "America/New_York" );
+
+		DateTime nowLondon1 = DateTime.now( timeZoneLondon1 ); // Assign a time zone rather than rely on implicit default time zone.
+		DateTime nowKolkata = nowLondon1.withZone( timeZoneKolkata );
+		DateTime nowNewYork = nowLondon1.withZone( timeZoneNewYork );
+		DateTime nowUtc = nowLondon1.withZone( DateTimeZone.UTC );  // Built-in constant for UTC.
 
 	}
 
